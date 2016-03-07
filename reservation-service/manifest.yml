@@ -1,0 +1,16 @@
+---
+applications:
+- name: reservation-service
+  memory: 438M
+  instances: 1
+  host: reservation-service-amar
+  domain: cfapps.io
+  path: target/reservation-service.jar
+  services:
+    - reservations-postgresql
+    - config-service
+    - eureka-service
+  env:
+    SPRING_PROFILES_ACTIVE: cloud
+    DEBUG: "true"
+    debug: "true"

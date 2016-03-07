@@ -1,0 +1,13 @@
+---
+applications:
+- name: eureka-service
+  memory: 350M
+  instances: 1
+  host: eureka-service-amar
+  domain: cfapps.io
+  path: target/eureka-service.jar
+  services:
+      - config-service
+  env:
+    SPRING_PROFILES_ACTIVE: cloud
+    DEBUG: "true"
